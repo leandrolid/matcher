@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="8dp"
+    app:cardCornerRadius="8dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gray_500">
+
+        <ImageView
+            android:id="@+id/ivFirstTeamImage"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:contentDescription="@string/cd_first_team_image"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/tvFirstTeamName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="24dp"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/ivFirstTeamImage"
+            app:layout_constraintStart_toStartOf="@+id/ivFirstTeamImage"
+            app:layout_constraintTop_toBottomOf="@+id/ivFirstTeamImage"
+            tools:text="Brasil" />
+
+        <TextView
+            android:id="@+id/tvFirstTeamGoals"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/starting_goals"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/ivFirstTeamImage"
+            app:layout_constraintEnd_toStartOf="@+id/tvVersus"
+            app:layout_constraintStart_toEndOf="@+id/ivFirstTeamImage"
+            app:layout_constraintTop_toTopOf="@+id/ivFirstTeamImage" />
+
+        <TextView
+            android:id="@+id/tvVersus"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="X"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/ivFirstTeamImage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/ivFirstTeamImage"
+            tools:ignore="HardcodedText" />
+
+        <ImageView
+            android:id="@+id/ivSecondTeamImage"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:contentDescription="@string/cd_second_team_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/tvSecondTeamName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="24dp"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/ivSecondTeamImage"
+            app:layout_constraintStart_toStartOf="@+id/ivSecondTeamImage"
+            app:layout_constraintTop_toBottomOf="@+id/ivSecondTeamImage"
+            tools:text="Argentina" />
+
+        <TextView
+            android:id="@+id/tvSecondTeamGoals"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/starting_goals"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/ivSecondTeamImage"
+            app:layout_constraintEnd_toStartOf="@+id/ivSecondTeamImage"
+            app:layout_constraintStart_toEndOf="@+id/tvVersus"
+            app:layout_constraintTop_toTopOf="@+id/ivSecondTeamImage" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

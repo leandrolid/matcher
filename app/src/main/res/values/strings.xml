@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Matcher</string>
+    <string name="match_simulator_button">Match simulator button</string>
+    <string name="starting_goals">0</string>
+    <string name="cd_first_team_image">First team image</string>
+    <string name="cd_second_team_image">Second team image</string>
+    <string name="txt_versus">X</string>
+</resources>
