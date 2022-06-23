@@ -1,13 +1,15 @@
 package com.matcher.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
 import com.matcher.R
 import com.matcher.data.MatchesApi
 import com.matcher.databinding.ActivityMainBinding
 import com.matcher.domain.Match
+import com.matcher.ui.adapter.MatchesAdapter
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -15,7 +17,8 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class MainActivity : AppCompatActivity() {
-    private var matches: List<Match>? = null
+    private lateinit var matchesAdapter: MatchesAdapter
+    private lateinit var matches: List<Match>
     private lateinit var matchesApi: MatchesApi
     private lateinit var binding: ActivityMainBinding
 
@@ -41,10 +44,15 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupMatchesList() {
-        matchesApi.getMatches().enqueue(object: Callback<List<Match>> {
+        binding.rvMatchesList.layoutManager = LinearLayoutManager(this)
+        binding.rvMatchesList.setHasFixedSize(true)
+
+        matchesApi.getMatches().enqueue(object : Callback<List<Match>> {
             override fun onResponse(call: Call<List<Match>>, response: Response<List<Match>>) {
                 if (response.isSuccessful) {
-                    matches = response.body()
+                    matches = response.body()!!
+                    matchesAdapter = MatchesAdapter(matches)
+                    binding.rvMatchesList.adapter = matchesAdapter
                 } else {
                     showErrorMessage(getString(R.string.default_error_message))
                 }
