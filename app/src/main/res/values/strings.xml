@@ -5,4 +5,5 @@
     <string name="cd_first_team_image">First team image</string>
     <string name="cd_second_team_image">Second team image</string>
     <string name="txt_versus">X</string>
+    <string name="default_error_message">Ocorreu um erro inesperado</string>
 </resources>
