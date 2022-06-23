@@ -1,8 +1,11 @@
 package com.matcher.domain
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
-data class Match (
+@Parcelize
+data class Match(
     @SerializedName("descricao")
     val description: String,
     @SerializedName("local")
@@ -11,4 +14,4 @@ data class Match (
     val firstTeam: Team,
     @SerializedName("visitante")
     val secondTeam: Team
-)
+) : Parcelable

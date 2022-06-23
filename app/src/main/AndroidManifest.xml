@@ -18,7 +18,8 @@
         <activity
             android:name=".ui.DetailActivity"
             android:theme="@style/Theme.Matcher.NoActionBar"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".ui.MainActivity"/>
         <activity
             android:name=".ui.MainActivity"
             android:exported="true">

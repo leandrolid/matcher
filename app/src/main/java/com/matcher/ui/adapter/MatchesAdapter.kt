@@ -1,11 +1,13 @@
 package com.matcher.ui.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.matcher.databinding.MatchItemBinding
 import com.matcher.domain.Match
+import com.matcher.ui.DetailActivity
 
 
 class MatchesAdapter(var matches: List<Match>):
@@ -41,6 +43,13 @@ class MatchesAdapter(var matches: List<Match>):
         viewHolder.binding.tvSecondTeamName.text = match.secondTeam.name
         if (match.secondTeam.score != null) {
             viewHolder.binding.tvSecondTeamGoals.text = match.secondTeam.score.toString()
+        }
+
+        viewHolder.itemView.setOnClickListener { view ->
+            val intent = Intent(context, DetailActivity::class.java)
+
+            intent.putExtra(DetailActivity.Extras.MATCH, match)
+            context.startActivity(intent)
         }
     }
 
