@@ -8,7 +8,7 @@ import com.matcher.databinding.MatchItemBinding
 import com.matcher.domain.Match
 
 
-class MatchesAdapter(private val matches: List<Match>):
+class MatchesAdapter(var matches: List<Match>):
     RecyclerView.Adapter<MatchesAdapter.ViewHolder>() {
 
     class ViewHolder(binding: MatchItemBinding): RecyclerView.ViewHolder(binding.root) {
@@ -33,8 +33,15 @@ class MatchesAdapter(private val matches: List<Match>):
 
         Glide.with(context).load(match.firstTeam.image).circleCrop().into(viewHolder.binding.ivFirstTeamImage)
         viewHolder.binding.tvFirstTeamName.text = match.firstTeam.name
+        if (match.firstTeam.score != null) {
+            viewHolder.binding.tvFirstTeamGoals.text = match.firstTeam.score.toString()
+        }
+
         Glide.with(context).load(match.secondTeam.image).circleCrop().into(viewHolder.binding.ivSecondTeamImage)
         viewHolder.binding.tvSecondTeamName.text = match.secondTeam.name
+        if (match.secondTeam.score != null) {
+            viewHolder.binding.tvSecondTeamGoals.text = match.secondTeam.score.toString()
+        }
     }
 
     // Return the size of your dataset (invoked by the layout manager)

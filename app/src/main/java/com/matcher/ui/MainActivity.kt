@@ -1,5 +1,7 @@
 package com.matcher.ui
 
+import android.animation.Animator
+import android.animation.AnimatorListenerAdapter
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -15,6 +17,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
     private lateinit var matchesAdapter: MatchesAdapter
@@ -32,6 +35,36 @@ class MainActivity : AppCompatActivity() {
 
         setupHttpClient()
         setupMatchesList()
+        setupMatchesRefresh()
+        setupFloatingActionButton()
+    }
+
+    private fun setupFloatingActionButton() {
+        binding.fabSimulate.setOnClickListener { view ->
+            view.animate().rotationBy(360F).setDuration(500).setListener(
+                object : AnimatorListenerAdapter() {
+                    override fun onAnimationEnd(animation: Animator?) {
+                        super.onAnimationEnd(animation)
+
+                        val random = Random()
+
+                        for (index in 0 until matchesAdapter.itemCount) {
+                            val match = matchesAdapter.matches[index]
+                            match.firstTeam.score = random.nextInt(match.firstTeam.stars + 1)
+                            match.secondTeam.score = random.nextInt(match.secondTeam.stars + 1)
+
+                            matchesAdapter.notifyItemChanged(index)
+                        }
+                    }
+                }
+            )
+        }
+
+    }
+
+
+    private fun setupMatchesRefresh() {
+        binding.srlMatchesList.setOnRefreshListener(this::getMatchesFromApi)
     }
 
     private fun setupHttpClient() {
@@ -47,6 +80,11 @@ class MainActivity : AppCompatActivity() {
         binding.rvMatchesList.layoutManager = LinearLayoutManager(this)
         binding.rvMatchesList.setHasFixedSize(true)
 
+        getMatchesFromApi()
+    }
+
+    private fun getMatchesFromApi() {
+        binding.srlMatchesList.isRefreshing = true
         matchesApi.getMatches().enqueue(object : Callback<List<Match>> {
             override fun onResponse(call: Call<List<Match>>, response: Response<List<Match>>) {
                 if (response.isSuccessful) {
@@ -56,11 +94,13 @@ class MainActivity : AppCompatActivity() {
                 } else {
                     showErrorMessage(getString(R.string.default_error_message))
                 }
+                binding.srlMatchesList.isRefreshing = false
             }
 
             override fun onFailure(call: Call<List<Match>>, t: Throwable) {
                 Log.i("getMatches error", t.message.toString())
                 showErrorMessage(getString(R.string.default_error_message))
+                binding.srlMatchesList.isRefreshing = false
             }
         })
     }
