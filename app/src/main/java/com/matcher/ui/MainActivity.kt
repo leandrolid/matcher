@@ -1,4 +1,4 @@
-package com.matcher
+package com.matcher.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

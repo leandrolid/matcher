@@ -1,9 +1,8 @@
-package com.matcher
+package com.matcher.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.matcher.databinding.ActivityDetailBinding
-import com.matcher.databinding.ActivityMainBinding
 
 class DetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailBinding
