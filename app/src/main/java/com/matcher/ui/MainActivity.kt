@@ -20,8 +20,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var matchesAdapter: MatchesAdapter
-    private lateinit var matches: List<Match>
+    private var matchesAdapter = MatchesAdapter(Collections.emptyList())
     private lateinit var matchesApi: MatchesApi
     private lateinit var binding: ActivityMainBinding
 
@@ -79,6 +78,7 @@ class MainActivity : AppCompatActivity() {
     private fun setupMatchesList() {
         binding.rvMatchesList.layoutManager = LinearLayoutManager(this)
         binding.rvMatchesList.setHasFixedSize(true)
+        binding.rvMatchesList.adapter = matchesAdapter
 
         getMatchesFromApi()
     }
@@ -88,7 +88,7 @@ class MainActivity : AppCompatActivity() {
         matchesApi.getMatches().enqueue(object : Callback<List<Match>> {
             override fun onResponse(call: Call<List<Match>>, response: Response<List<Match>>) {
                 if (response.isSuccessful) {
-                    matches = response.body()!!
+                    val matches = response.body()!!
                     matchesAdapter = MatchesAdapter(matches)
                     binding.rvMatchesList.adapter = matchesAdapter
                 } else {
