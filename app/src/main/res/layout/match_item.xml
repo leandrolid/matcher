@@ -42,7 +42,6 @@
             android:id="@+id/tvFirstTeamGoals"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/starting_goals"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="@+id/ivFirstTeamImage"
@@ -52,7 +51,6 @@
 
         <TextView
             android:id="@+id/tvVersus"
-
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="X"
@@ -91,10 +89,8 @@
 
         <TextView
             android:id="@+id/tvSecondTeamGoals"
-
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/starting_goals"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="@+id/ivSecondTeamImage"

@@ -35,7 +35,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:background="@android:color/transparent"
-                android:elevation="0dp" />
+                android:elevation="0dp"
+                app:title="@string/title_place" />
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
@@ -44,6 +45,7 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/black"
         android:fillViewport="true"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
@@ -71,6 +73,7 @@
                 android:layout_marginEnd="@dimen/margin_default"
                 android:gravity="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -82,6 +85,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_default"
+                android:theme="@style/RatingBar"
                 app:layout_constraintEnd_toEndOf="@+id/ivFirstTeamImage"
                 app:layout_constraintStart_toStartOf="@+id/ivFirstTeamImage"
                 app:layout_constraintTop_toBottomOf="@+id/ivFirstTeamImage" />
@@ -92,6 +96,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_default"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/white"
                 app:layout_constraintEnd_toEndOf="@+id/ivFirstTeamImage"
                 app:layout_constraintStart_toStartOf="@+id/ivFirstTeamImage"
                 app:layout_constraintTop_toBottomOf="@+id/rbFirstTeamStars"
@@ -103,6 +108,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="@+id/ivFirstTeamImage"
                 app:layout_constraintEnd_toStartOf="@+id/tvVersus"
                 app:layout_constraintStart_toEndOf="@+id/ivFirstTeamImage"
@@ -115,6 +121,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="@string/txt_versus"
+                android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="@+id/ivFirstTeamImage"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -136,6 +143,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_default"
+                android:theme="@style/RatingBar"
                 app:layout_constraintEnd_toEndOf="@+id/ivSecondTeamImage"
                 app:layout_constraintStart_toStartOf="@+id/ivSecondTeamImage"
                 app:layout_constraintTop_toBottomOf="@+id/ivSecondTeamImage" />
@@ -146,6 +154,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_default"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/white"
                 app:layout_constraintEnd_toEndOf="@+id/ivSecondTeamImage"
                 app:layout_constraintStart_toStartOf="@+id/ivSecondTeamImage"
                 app:layout_constraintTop_toBottomOf="@+id/rbSecondTeamStars"
@@ -157,6 +166,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="@+id/ivSecondTeamImage"
                 app:layout_constraintEnd_toStartOf="@+id/ivSecondTeamImage"
                 app:layout_constraintStart_toEndOf="@+id/tvVersus"
