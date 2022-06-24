@@ -52,7 +52,7 @@
             android:layout_height="wrap_content">
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/ivHomeTeam"
+                android:id="@+id/ivFirstTeamImage"
                 android:layout_width="@dimen/team_image_size"
                 android:layout_height="@dimen/team_image_size"
                 android:layout_marginStart="@dimen/margin_default"
@@ -77,36 +77,36 @@
                 tools:text="Match Description" />
 
             <androidx.appcompat.widget.AppCompatRatingBar
-                android:id="@+id/rbHomeTeamStars"
+                android:id="@+id/rbFirstTeamStars"
                 style="@style/Widget.AppCompat.RatingBar.Small"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_default"
-                app:layout_constraintEnd_toEndOf="@+id/ivHomeTeam"
-                app:layout_constraintStart_toStartOf="@+id/ivHomeTeam"
-                app:layout_constraintTop_toBottomOf="@+id/ivHomeTeam" />
+                app:layout_constraintEnd_toEndOf="@+id/ivFirstTeamImage"
+                app:layout_constraintStart_toStartOf="@+id/ivFirstTeamImage"
+                app:layout_constraintTop_toBottomOf="@+id/ivFirstTeamImage" />
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tvHomeTeamName"
+                android:id="@+id/tvFirstTeamName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_default"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                app:layout_constraintEnd_toEndOf="@+id/ivHomeTeam"
-                app:layout_constraintStart_toStartOf="@+id/ivHomeTeam"
-                app:layout_constraintTop_toBottomOf="@+id/rbHomeTeamStars"
+                app:layout_constraintEnd_toEndOf="@+id/ivFirstTeamImage"
+                app:layout_constraintStart_toStartOf="@+id/ivFirstTeamImage"
+                app:layout_constraintTop_toBottomOf="@+id/rbFirstTeamStars"
                 tools:text="Home Team" />
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tvHomeTeamScore"
+                android:id="@+id/tvFirstTeamGoals"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                app:layout_constraintBottom_toBottomOf="@+id/ivHomeTeam"
+                app:layout_constraintBottom_toBottomOf="@+id/ivFirstTeamImage"
                 app:layout_constraintEnd_toStartOf="@+id/tvVersus"
-                app:layout_constraintStart_toEndOf="@+id/ivHomeTeam"
-                app:layout_constraintTop_toTopOf="@+id/ivHomeTeam"
+                app:layout_constraintStart_toEndOf="@+id/ivFirstTeamImage"
+                app:layout_constraintTop_toTopOf="@+id/ivFirstTeamImage"
                 tools:text="99" />
 
             <com.google.android.material.textview.MaterialTextView
@@ -115,13 +115,13 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="@string/txt_versus"
-                app:layout_constraintBottom_toBottomOf="@+id/ivHomeTeam"
+                app:layout_constraintBottom_toBottomOf="@+id/ivFirstTeamImage"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/ivHomeTeam" />
+                app:layout_constraintTop_toTopOf="@+id/ivFirstTeamImage" />
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/ivAwayTeam"
+                android:id="@+id/ivSecondTeamImage"
                 android:layout_width="@dimen/team_image_size"
                 android:layout_height="@dimen/team_image_size"
                 android:layout_marginTop="@dimen/margin_default"
@@ -131,36 +131,36 @@
                 tools:srcCompat="@tools:sample/avatars" />
 
             <androidx.appcompat.widget.AppCompatRatingBar
-                android:id="@+id/rbAwayTeamStars"
+                android:id="@+id/rbSecondTeamStars"
                 style="@style/Widget.AppCompat.RatingBar.Small"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_default"
-                app:layout_constraintEnd_toEndOf="@+id/ivAwayTeam"
-                app:layout_constraintStart_toStartOf="@+id/ivAwayTeam"
-                app:layout_constraintTop_toBottomOf="@+id/ivAwayTeam" />
+                app:layout_constraintEnd_toEndOf="@+id/ivSecondTeamImage"
+                app:layout_constraintStart_toStartOf="@+id/ivSecondTeamImage"
+                app:layout_constraintTop_toBottomOf="@+id/ivSecondTeamImage" />
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tvAwayTeamName"
+                android:id="@+id/tvSecondTeamName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_default"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                app:layout_constraintEnd_toEndOf="@+id/ivAwayTeam"
-                app:layout_constraintStart_toStartOf="@+id/ivAwayTeam"
-                app:layout_constraintTop_toBottomOf="@+id/rbAwayTeamStars"
+                app:layout_constraintEnd_toEndOf="@+id/ivSecondTeamImage"
+                app:layout_constraintStart_toStartOf="@+id/ivSecondTeamImage"
+                app:layout_constraintTop_toBottomOf="@+id/rbSecondTeamStars"
                 tools:text="Away Team" />
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tvAwayTeamScore"
+                android:id="@+id/tvSecondTeamGoals"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                app:layout_constraintBottom_toBottomOf="@+id/ivAwayTeam"
-                app:layout_constraintEnd_toStartOf="@+id/ivAwayTeam"
+                app:layout_constraintBottom_toBottomOf="@+id/ivSecondTeamImage"
+                app:layout_constraintEnd_toStartOf="@+id/ivSecondTeamImage"
                 app:layout_constraintStart_toEndOf="@+id/tvVersus"
-                app:layout_constraintTop_toTopOf="@+id/ivAwayTeam"
+                app:layout_constraintTop_toTopOf="@+id/ivSecondTeamImage"
                 tools:text="99" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
